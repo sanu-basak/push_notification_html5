@@ -4,6 +4,20 @@
 	<title>Push Notification</title>
 </head>
 <body>
+     <script type="text/javascript">
+     	window.onload = function (){
+     		Notification.requestPermission(status => {
+     			if (status == 'granted') {
+     				let notification = new Notification('Notification Title' , {
+     					body : "this is simple notification",icon : "./icon.png"
+     				})
 
+     				notification.onclick = function (){
+     					notification.close();
+     				}
+     			}
+     		})
+     	}
+     </script>
 </body>
 </html>
